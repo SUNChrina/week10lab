@@ -1,0 +1,18 @@
+<div class="section">
+    <table class="table table-striped">
+      <tr>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Select</th>
+      </tr>
+      <tr *ngFor="let item of moviesDB">
+        <td>{{item.title}}</td>
+        <td>{{item.year}}</td>
+        <td><a class = "btn btn-success" (click)="selectMovie(item)">+</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="alert alert-info" role="alert" *ngIf="selectedMovie!=null">
+    <h2> {{selectedMovie.title}}</h2>
+  </div>

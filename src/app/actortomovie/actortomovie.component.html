@@ -1,0 +1,36 @@
+<p>actortomovie works!</p>
+<p>actortomovie works!</p>
+<div class="section">
+    <table class="table table-striped">
+        <tr>
+            <th>Actor Name</th>
+            <th>Actor Birth Year</th>
+        </tr>
+        <tr *ngFor="let item of actorsDB">
+            <td>{{item.name}}</td>
+            <td>{{item.bYear}}</td>
+            <button type="submit" class="btn btn-primary" (click)="saveActorID(item._id, item.name)">Select</button>
+        </tr>
+    </table>
+
+    
+</div>
+
+<div class="section">
+    <table class="table table-striped">
+        <tr>
+            <th>Movie Title</th>
+            <th>Movie Year</th>
+        </tr>
+        <tr *ngFor="let item of moviesDB">
+            <td>{{item.title}}</td>
+            <td>{{item.year}}</td>
+            <button type="submit" class="btn btn-primary" (click)="saveMovieID(item._id, item.title)">select</button>
+        </tr>
+    </table>
+</div>
+
+<p>Movie Chosen: {{movieTitle}}</p>
+<p>Actor Chosen: {{actorName}}</p>
+
+<button type="submit" class="btn btn-primary" (click)="addMovietoActor()">Confirm</button>
